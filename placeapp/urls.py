@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 from django.views.generic import RedirectView
+from django.views.static import serve
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('places/', include('places.urls')),
     path('', RedirectView.as_view(url="places/", permanent=True)),
-]
+    path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

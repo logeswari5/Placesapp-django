@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'places.apps.PlacesConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +78,9 @@ WSGI_APPLICATION = 'placeapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'placeproject',
-        'USER': 'logeswari',
-        'PASSWORD': 'logeswari',
+        'NAME': 'placedb',
+        'USER': 'postgres',
+        'PASSWORD': 'liki',
         'HOST': 'localhost',
         'PORT': '5432',
     }
