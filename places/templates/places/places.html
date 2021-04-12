@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block body %}
@@ -32,6 +33,8 @@
                             </a>
                         {% else %}
                             <a class="page-link" aria-label="Next">
+
+
                                 <span style="color: grey" aria-hidden="true">&raquo;</span>
                             </a>
                         {% endif %}
@@ -47,7 +50,7 @@
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Address: </strong><br>{{ place.city }}, {{ place.address }}</li>
-                    <li class="list-group-item"><strong>Phone number: </strong><br>{{ place.phone }}</li>
+                    <li class="list-group-item"><strong>Description: </strong><br>{{ place.description }}</li>
                     <li class="list-group-item"><strong>Location: </strong><br>{{ place.location }}</li>
                 </ul>
             </li>
@@ -55,5 +58,5 @@
         {% endfor %}
     </ul>
 
-
 {% endblock %}
+
