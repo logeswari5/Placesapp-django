@@ -7,5 +7,4 @@ urlpatterns = [
 
     path('places/', views.PlaceListView.as_view(), name="places"),
     path('place/<int:pk>/', views.PlaceDetailView.as_view(), name="place"),
-    path('new/place/', views.PlaceCreate.as_view(), name="new-place"),
-]
+       ]
