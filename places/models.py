@@ -25,3 +25,5 @@ class Place(models.Model):
     @property
     def lat_lon(self):
         return list(getattr(self.location, 'coords', [])[::-1])
+
+
