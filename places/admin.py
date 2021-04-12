@@ -12,6 +12,7 @@ class PlaceAdmin(OSMGeoAdmin):
     list_display = ('title', 'location', 'city')
 
 
+
 @admin.register(PlaceType)
 class PlaceTypeAdmin(admin.ModelAdmin):
     list_display = ('place_type',)
