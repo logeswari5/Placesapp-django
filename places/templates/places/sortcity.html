@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h3> List of Cities: </h3>
+ <div class="container my-4">
+    <ul>
+        {% for places in distinct_cities %}
+        <li class="my-4">
+            <a href="{% url 'instance-city-place' places.city %}">{{places.city}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
+{% endblock%}
