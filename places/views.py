@@ -7,8 +7,19 @@ from django.http import HttpResponseRedirect
 
 
 def index(request):
+    # filter = Place.objects.distinct('city')
+    # params = {
+    #     'cities': filter,
+    # }
     return render(request, 'places/index.html')
+def sortcity(request):
+    distinct_cities = Place.objects.distinct('city')
+    return render(request, 'places/sortcity.html', context={'distinct_cities': distinct_cities})
 
+
+def all_place_in_city(request, cityname):
+    list_of_place = Place.objects.filter(city=cityname)
+    return render(request, 'places/sorted_by_city.html', context={'list_of_place': list_of_place})
 
 
 
@@ -20,13 +31,14 @@ class PlaceDetailView(generic.DetailView):
     queryset = Place.objects.filter(location__isnull=False)
 
 
-
 class PlaceListView(generic.ListView):
     model = Place
     template_name = 'places/places.html'
     context_object_name = 'places'
     paginate_by = 2
     queryset = Place.objects.filter(location__isnull=False)
+
+
 
 class PlaceCreate(generic.CreateView):
     model = Place
