@@ -1,1 +1,1 @@
-web: gunicorn django-placeapp.wsgi --log-file -
+web: gunicorn placeapp.wsgi --log-file -
